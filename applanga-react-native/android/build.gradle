@@ -1,0 +1,30 @@
+apply plugin: 'com.android.library'
+
+android {
+  publishNonDefault true
+
+  defaultConfig {
+    compileSdk rootProject.ext.compileSdkVersion
+    minSdkVersion 16
+    targetSdkVersion rootProject.ext.targetSdkVersion
+  }
+
+  lintOptions {
+    disable 'InvalidPackage'
+  }
+
+  compileOptions {
+    sourceCompatibility JavaVersion.VERSION_1_7
+    targetCompatibility JavaVersion.VERSION_1_7
+  }
+}
+
+repositories {
+    maven { url 'https://maven.applanga.com/'}
+}
+
+dependencies {
+  implementation "com.facebook.react:react-native:+"
+  //noinspection ApplangaPlugin
+  implementation "com.applanga.android:Applanga:4.0.214"
+}
